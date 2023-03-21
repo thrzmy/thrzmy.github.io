@@ -1,4 +1,13 @@
-/*========== scroll section active link =========*/
+/*========== menu icon and navbar=========*/
+let menuIcon =document.querySelector('#menu-icon');
+let navbar =document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+/*========== scroll section active links =========*/
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
@@ -21,6 +30,12 @@ window.onscroll = () => {
 let header = document.querySelector('.header');
 
 header.classList.toggle('sticky', window.scrollY > 100);
+
+
+/*========== remove menu icon  in navbar =========*/
+  menuIcon.classList.remove('bx-x');
+  navbar.classList.remove('active');
+
 };
 
 /*========== swiper =========*/
@@ -38,3 +53,5 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
+
+  
