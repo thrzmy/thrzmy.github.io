@@ -27,16 +27,17 @@
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
 }
 
 body {
+    overflow-x: hidden;
     background: var(--bg-color);
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
 }
 
 /*header part*/
-
 .header {
     position: fixed;
     top: 0;
