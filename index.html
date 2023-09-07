@@ -20,35 +20,30 @@
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
+  <style>
+    .centered-text {
+      position: absolute;
+      top: 50%; /* Center vertically */
+      left: 50%; /* Center horizontally */
+      transform: translate(
+        -50%,
+        -50%
+      ); /* Center both horizontally and vertically */
+      text-align: center;
+    }
+
+    .centered-text p {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
 
   <body>
-    <!-- about section -->
-    <section class="about" id="about">
-      <div class="about-img">
-        <img src="images/test_image.png" alt="" />
-      </div>
-
-      <div class="about-content">
-        <h2 class="heading">About <span>Me</span></h2>
-        <h3>Hi, I am looking for internship.</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Justo
-          laoreet sit amet cursus sit amet. Ultrices tincidunt arcu non sodales
-          neque. Adipiscing diam donec adipiscing tristique.
-        </p>
-
-        <a href="#" class="btn">Read More</a>
-      </div>
-    </section>
-
-    <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-    <!-- custom js -->
-    <script src="js/script.js"></script>
+    <div class="centered-text">
+      <h4 class="heading">
+        <span>Sorry! This website is under maintenance.</span>
+      </h4>
+      <p>Please comeback next time!</p>
+    </div>
   </body>
 </html>
