@@ -84,7 +84,7 @@
     }
 
     .col-md-8 {
-      width: 66.66667%;
+      width: 75%;
       float: left;
       padding-right: 15px;
       padding-left: 15px;
@@ -135,8 +135,15 @@
 
     /* Styling the navbar */
     .proj-navbar {
-      background-color: #333; /* Set your preferred background color */
-      padding: 10px; /* Adjust padding as needed */
+      background: hsla(282, 43%, 51%, 0.75);
+      padding: 10px;
+      border-radius: 10px; /* Add rounded corners */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      transition: background 0.3s ease; /* Smooth transition on background change */
+    }
+
+    .proj-navbar:hover {
+      background: hsla(282, 43%, 51%, 1); /* Darken the background on hover */
     }
 
     /* Styling the navbar items */
@@ -148,14 +155,17 @@
     /* Styling the navbar links/buttons */
     .proj-navbar-link {
       display: inline-block;
-      padding: 10px 20px; /* Adjust padding as needed */
+      padding: 10px 20px;
       text-decoration: none;
-      color: white; /* Set your preferred text color */
+      color: white;
+      border-radius: 5px; /* Add rounded corners to buttons */
+      transition: background 0.3s ease, color 0.3s ease; /* Smooth transition on color change */
     }
 
     .proj-navbar-link:hover,
     .proj-navbar-link.active {
-      background-color: #555; /* Set your preferred hover/active background color */
+      background: white;
+      color: hsla(282, 43%, 51%, 1);
     }
 
     /* Container for page content */

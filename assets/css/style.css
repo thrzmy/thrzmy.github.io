@@ -17,57 +17,29 @@
 
   /* gradient */
 
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(240, 1%, 25%) 3%,
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-      to bottom right,
-      hsla(240, 1%, 18%, 0.251) 0%,
-      hsla(240, 2%, 11%, 0) 100%
-    ),
-    hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right,
-    hsl(282, 100%, 71%) 0%,
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-      135deg,
-      hsla(282, 100%, 71%, 0.251) 0%,
-      hsla(35, 100%, 68%, 0) 59.86%
-    ),
-    hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right,
-    hsl(0, 0%, 25%) 0%,
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right,
-    hsl(282, 100%, 72%),
-    hsl(272, 100%, 68%)
-  );
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(282, 1%, 95%) 3%, hsl(0, 0%, 90%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(282, 1%, 88%, 0.251) 0%, hsla(282, 2%, 81%, 0) 100%), hsl(282, 2%, 83%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(282, 100%, 95%) 0%, hsla(36, 100%, 93%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(282, 100%, 95%, 0.251) 0%, hsla(35, 100%, 92%, 0) 59.86%), hsl(282, 2%, 83%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsla(282, 100%, 75%, 0.75) 0%, hsla(282, 100%, 75%, 0) 50%); /* Purple gradient with 0.75 alpha */
+  --text-gradient-yellow: linear-gradient(to right, hsl(282, 100%, 50%), hsl(272, 100%, 45%));
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(282, 100%, 72%);
-  --vegas-gold: hsl(282, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --jet: hsl(0, 0%, 78%);
+  --onyx: hsl(282, 1%, 83%);
+  --eerie-black-1: hsl(282, 2%, 87%);
+  --eerie-black-2: hsl(282, 2%, 88%);
+  --smoky-black: hsl(0, 0%, 93%);
+  --white-1: hsl(0, 0%, 0%);
+  --white-2: hsl(0, 0%, 2%);
+  --orange-yellow-crayola: hsl(282, 100%, 75%); /* Adjusted to purple */
+  --vegas-gold: hsl(282, 54%, 60%); /* Adjusted to purple */
+  --light-gray: hsl(0, 0%, 16%);
+  --light-gray-70: hsla(0, 0%, 16%, 0.7);
+  --bittersweet-shimmer: hsl(282, 43%, 51%);
 
-  /**
-   * typography
-   */
+  /* typography */
 
   /* font-family */
   --ff-poppins: "Poppins", sans-serif;
@@ -88,19 +60,15 @@
   --fw-500: 500;
   --fw-600: 600;
 
-  /**
-   * shadow
-   */
+  /* shadow */
 
-  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.1);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.1);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.1);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.05);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.1);
 
-  /**
-   * transition
-   */
+  /* transition */
 
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
@@ -363,12 +331,13 @@ main {
 
 .info-content .title {
   color: var(--white-1);
-  background: var(--onyx);
+  background: var(--bg-gradient-onyx);
   font-size: var(--fs-8);
   font-weight: var(--fw-300);
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+  box-shadow: var(--shadow-1);
 }
 
 .info_more-btn {
@@ -481,7 +450,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(300, 47%, 38%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -991,7 +960,7 @@ main {
 }
 
 .select-item button:hover {
-  --eerie-black-2: hsl(240, 2%, 20%);
+  --eerie-black-2: hsl(282, 2%, 20%);
 }
 
 .project-list {
@@ -1156,6 +1125,7 @@ main {
 
 .blog-content {
   padding: 15px;
+  background: var(--bg-gradient-yellow-1--);
 }
 
 .blog-meta {
@@ -1218,7 +1188,7 @@ main {
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(1) invert(1);
+  filter: hue-rotate(240deg) saturate(200%) brightness(75%);
 }
 
 .contact-form {
@@ -1274,7 +1244,7 @@ textarea.form-input::-webkit-resizer {
   position: relative;
   width: 100%;
   background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
+  color: var(--white-2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1292,7 +1262,7 @@ textarea.form-input::-webkit-resizer {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: hsla(300, 47%, 38%, 0.75);
   border-radius: inherit;
   z-index: -1;
   transition: var(--transition-1);
@@ -1910,8 +1880,7 @@ textarea.form-input::-webkit-resizer {
     border: 5px solid var(--smoky-black);
     background: hsla(0, 0%, 100%, 0.1);
     border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-      inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11), inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
   }
 
   body::-webkit-scrollbar-thumb:hover {
