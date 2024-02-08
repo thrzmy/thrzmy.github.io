@@ -4,46 +4,1682 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Pareñas</title>
+    <title>Personal Portfolio</title>
 
-    <!-- swiper css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <!-- box icons -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <!--
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./assets/img/portfolio.png" type="image/x-icon" />
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Bootstrap JS and Popper.js CDN (required for Bootstrap JavaScript features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- custom css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <style>
-    .centered-text {
-      position: absolute;
-      top: 50%; /* Center vertically */
-      left: 50%; /* Center horizontally */
-      transform: translate(
-        -50%,
-        -50%
-      ); /* Center both horizontally and vertically */
-      text-align: center;
+    .flex-center {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
     }
 
-    .centered-text p {
-      font-size: 24px;
-      font-weight: bold;
+    .flex-center i {
+      font-size: 1.25em;
+      color: hsl(45, 100%, 72%);
+    }
+
+    .flex-center img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .row::after,
+    .row::before {
+      content: "";
+      display: table;
+    }
+
+    .row::after {
+      clear: both;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+
+    .text-purple {
+      color: hsl(282, 54%, 58%);
+      font-weight: 400;
+      line-height: 1.6;
+      font-style: italic;
     }
   </style>
+  <style>
+    .row::after,
+    .row::before {
+      content: "";
+      display: table;
+    }
 
+    .row::after {
+      clear: both;
+    }
+
+    .col-md-8,
+    .col-md-4 {
+      box-sizing: border-box;
+    }
+
+    .col-md-8 {
+      width: 66.66667%;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .col-md-4 {
+      width: 33.33333%;
+      float: left;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .col-md-8 {
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .col-md-4 {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .px-3 {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    .mb-1 {
+      margin-bottom: 0.5rem !important;
+    }
+    .mb-3 {
+      margin-bottom: 1rem !important;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+    .d-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  </style>
+  <style>
+    .proj-navbar-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Styling the navbar */
+    .proj-navbar {
+      background-color: #333; /* Set your preferred background color */
+      padding: 10px; /* Adjust padding as needed */
+    }
+
+    /* Styling the navbar items */
+    .proj-navbar-item {
+      display: inline-block;
+      margin: 0;
+    }
+
+    /* Styling the navbar links/buttons */
+    .proj-navbar-link {
+      display: inline-block;
+      padding: 10px 20px; /* Adjust padding as needed */
+      text-decoration: none;
+      color: white; /* Set your preferred text color */
+    }
+
+    .proj-navbar-link:hover,
+    .proj-navbar-link.active {
+      background-color: #555; /* Set your preferred hover/active background color */
+    }
+
+    /* Container for page content */
+    .content-container {
+      padding: 20px; /* Adjust padding as needed */
+      display: none; /* Initially hide all content containers */
+    }
+
+    .content-container.active {
+      display: block; /* Show the active content container */
+    }
+  </style>
   <body>
-    <div class="centered-text">
-      <h4 class="heading">
-        <span>Sorry! This website is under maintenance.</span>
-      </h4>
-      <p>Please comeback next time!</p>
-    </div>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img src="./assets/img/Profile.jpg" alt="Thrizia May Pareñas" width="80" />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Thrizia May Pareñas">Thrizia May</h1>
+
+            <p class="title">Web developer</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:parenas.thriziamay.work@gmail.com" class="contact-link">parenas.thriziamay.work@gmail.com</a>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:09159140056" class="contact-link">+63 (915) 914-0056</a>
+              </div>
+            </li>
+
+            <li class="contact-item" style="display: none">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+
+                <time datetime="2001-05-12">May 12, 2001</time>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>General Mariano Alvarez, Cavite Philippines</address>
+              </div>
+            </li>
+          </ul>
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://www.facebook.com/Thriziamay" target="_blank" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.instagram.com/thrzmy_/" target="_blank" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/thrizia-may-pare%C3%B1as-506163186/" target="_blank" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://github.com/thrzmy" target="_blank" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link="about">About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link="resume">Resume</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link="projects">Projects</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link="awards">Awards</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link="contact">Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--
+        - #ABOUT
+      -->
+        <article class="article about" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+          <section class="about-text">
+            <p>
+              Greetings! I'm Thrizia May B. Pareñas, a passionate web developer who finds joy in coding and draws inspiration from the captivating realms of anime, manga, and delicious food. At a modest height of 5'2" (or perhaps 5'3" on
+              exceptionally good days).
+            </p>
+
+            <p>
+              When I'm not immersed in crafting digital wonders, you can find me exploring animated worlds or engrossed in the pages of a compelling manga or manhwa. Chess serves as my strategic escape, and every free moment becomes an opportunity to
+              challenge myself and refine my coding skills.I am a quick learner and highly adaptable.
+            </p>
+          </section>
+
+          <!--
+          - service
+        -->
+
+          <section class="service">
+            <h3 class="h3 service-title">What i'm doing</h3>
+
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-design.svg
+                "
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web design</h4>
+
+                  <p class="service-item-text">Crafting visually stunning and user-centric website interfaces to elevate online experiences.</p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40" />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web development</h4>
+
+                  <p class="service-item-text">Building dynamic and scalable web applications using Laravel and PHP for streamlined backend operations.</p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-dev.svg" alt="mobile app icon" width="40" />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Backend Development</h4>
+
+                  <p class="service-item-text">Building the engine of websites, making sure everything runs smoothly behind the scenes using PHP</p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40" />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Client Communication</h4>
+
+                  <p class="service-item-text">Maintain regular communication with clients or stakeholders.</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!--
+          - testimonials
+        -->
+
+          <section class="testimonials">
+            <h3 class="h3 testimonials-title">Testimonials</h3>
+
+            <ul class="testimonials-list has-scrollbar">
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img src="./assets/img/testimonials/lopez.png" alt="Kennith Adrian Lopez" width="60" data-testimonials-avatar />
+                  </figure>
+
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Kennith Adrian Lopez</h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Thrizia May Pareñas is an outstanding team leader and an efficient programmer/web developer. Her constant flow of innovative ideas has significantly improved our team's task efficiency. Under her guidance, our overall
+                      performance has seen remarkable enhancement.
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img src="./assets/images/avatar-2.png" alt="Ann Asis Arceo" width="60" data-testimonials-avatar />
+                  </figure>
+
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Ann Asis Arceo</h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>...</p>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img src="./assets/images/avatar-1.png" alt="William Ferdinand Zareno" width="60" data-testimonials-avatar />
+                  </figure>
+
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title>William Ferdinand Zareno</h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>...</p>
+                  </div>
+                </div>
+              </li>
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img src="./assets/images/avatar-3.png" alt="Kritia Amante" width="60" data-testimonials-avatar />
+                  </figure>
+
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Kritia Amante</h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>...</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!--
+          - testimonials modal
+        -->
+
+          <div class="modal-container" data-modal-container>
+            <div class="overlay" data-overlay></div>
+
+            <section class="testimonials-modal">
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+              <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                  <img src="./assets/images/avatar-1.png" alt="Ann Asis Arceo" width="80" data-modal-img />
+                </figure>
+
+                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
+              </div>
+
+              <div class="modal-content">
+                <h4 class="h3 modal-title" data-modal-title>Ann Asis Arceo</h4>
+
+                <time datetime="2021-06-14">14 June, 2021</time>
+
+                <div data-modal-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur
+                    adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+        <article class="article resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Bachelor of Science In Computer Science</h4>
+
+                <span>2019 — 2023</span>
+
+                <p class="timeline-text">
+                  Eulogio "Amang" Rodriguez Institute of Science and Technology<br />
+                  Gen. Mariano Alavarez, Cavite Philippines
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Information and Communication Technology</h4>
+
+                <span>2017-2019</span>
+
+                <p class="timeline-text">University of Perpetual Help System<br />Gen. Mariano Alavarez, Cavite Philippines</p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Food Technology</h4>
+
+                <span>2013-2017</span>
+
+                <p class="timeline-text">
+                  General Mariano Alvarez Technical High School<br />
+                  Gen. Mariano Alavarez, Cavite Philippines
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Programmer</h4>
+
+                <span>September 2023 — Present</span>
+
+                <p class="timeline-text">
+                  LGU Information and Communication Technology Section<br />
+                  Designing and implementing web applications, with a focus on Information and Management Systems, to optimize LGU operations for enhanced efficiency.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Web Developer</h4>
+
+                <span>May 2023 - July 2023</span>
+
+                <p class="timeline-text">
+                  LGU Information and Communication Technology Section<br />
+                  Initiated as an intern and progressed to a programmer role. Successfully developed "Regutrike," a TODA Franchising System.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Customer Service Representative</h4>
+
+                <span>2021</span>
+
+                <p class="timeline-text">
+                  PUREGOLD GMA<br />
+                  Responsibly assisted customers and efficiently managed file records to ensure seamless and organized customer interactions.
+                </p>
+              </li>
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Various Roles</h4>
+
+                <span>2018-2021</span>
+
+                <p class="timeline-text">Held diverse positions including Cashier at Chowing and Sanford Marketing Corporation, Store Clerk, and Production Worker to other companies.</p>
+              </li>
+            </ol>
+          </section>
+          <section class="skill">
+            <h3 class="h3 skills-title">My Skills</h3>
+            <ul class="skills-list content-card">
+              <div style="width: 100%; display: flex">
+                <div style="width: 25%">
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/html.svg" alt="HTML" />
+                      <h5 class="h5">HTML</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/css.svg" alt="CSS" />
+                      <h5 class="h5">CSS</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/js.svg" alt="JavaScript" />
+                      <h5 class="h5">JavaScript</h5>
+                    </div>
+                  </li>
+                </div>
+                <div style="width: 25%">
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/bootstrap.svg" alt="Bootstrap" />
+                      <h5 class="h5">Bootstrap</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/jquery.svg" alt="jQuery" />
+                      <h5 class="h5">jQuery</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/git.svg" alt="Git" />
+                      <h5 class="h5">Git</h5>
+                    </div>
+                  </li>
+                </div>
+                <div style="width: 25%">
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/php.svg" alt="PHP" />
+                      <h5 class="h5">PHP</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/laravel.svg" alt="Laravel" width="48" height="48" />
+                      <h5 class="h5">Laravel</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/mysql.svg" alt="MySQL" />
+                      <h5 class="h5">MySQL</h5>
+                    </div>
+                  </li>
+                </div>
+                <div style="width: 25%">
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/responsive.svg" alt="Responsive Web Design" width="48" height="48" />
+                      <h5 class="h5">Responsive Web Design</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/analytic.svg" alt="Analytic & Cognitive" width="48" height="48" />
+                      <h5 class="h5">Analytic & Cognitive</h5>
+                    </div>
+                  </li>
+                  <li class="skills-item">
+                    <div class="title-wrapper">
+                      <img src="./assets/icons/problem.svg" alt="Problem Solving" width="48" height="48" />
+                      <h5 class="h5">Problem Solving</h5>
+                    </div>
+                  </li>
+                </div>
+              </div>
+            </ul>
+            <a href="./assets/docs/Parenas_Thizia_May_B.pdf" style="margin-top: 1rem"> <span class="text-purple"> You can download my resume here! </span></a>
+          </section>
+        </article>
+        <article class="article portfolio" data-page="projects">
+          <header>
+            <h2 class="h2 article-title">Projects</h2>
+          </header>
+          <nav class="proj-navbar">
+            <ul class="proj-navbar-list">
+              <li class="proj-navbar-item">
+                <button class="proj-navbar-link active" data-target="lcis">LCIS</button>
+              </li>
+              <li class="proj-navbar-item">
+                <button class="proj-navbar-link" data-target="regutrike">Regutrike</button>
+              </li>
+              <li class="proj-navbar-item">
+                <button class="proj-navbar-link" data-target="bms">BMS</button>
+              </li>
+              <li class="proj-navbar-item">
+                <button class="proj-navbar-link" data-target="gbdagm">GBDaGM</button>
+              </li>
+            </ul>
+          </nav>
+
+          <div id="lcis-content" class="content-container active">
+            <section class="about-text">
+              <p>
+                The Locational Clearance Information System (LCIS) is a sophisticated solution aimed at modernizing and optimizing the management of Locational Clearance applications in a municipality. By strategically implementing automation, LCIS
+                seeks to improve the efficiency of record creation, monitoring, and retrieval, ensuring quick and accurate outcomes.
+              </p>
+
+              <p>
+                The system promotes digitalization, allowing remote access to locational plans and reducing reliance on traditional paper documentation. LCIS establishes a centralized data repository, streamlining processes and expediting assessments
+                for a more systematic and efficient approach to locational clearance management.
+              </p>
+            </section>
+            <section class="projects mb-3">
+              <div class="px-3">
+                <div class="row">
+                  <style>
+                    .image-list {
+                      max-height: 305px; /* Set the maximum height of the image list */
+                      overflow-y: auto; /* Enable vertical scrolling */
+                    }
+
+                    .scrollable-images {
+                      margin-top: 15px; /* Adjust the margin between visible and scrollable images */
+                    }
+
+                    .image-list::-webkit-scrollbar {
+                      width: 10px; /* Set the width of the scrollbar */
+                    }
+
+                    .image-list::-webkit-scrollbar-thumb {
+                      background-color: #333; /* Set the color of the scrollbar thumb */
+                      border-radius: 5px; /* Set the border radius of the scrollbar thumb */
+                    }
+
+                    .image-list::-webkit-scrollbar-track {
+                      background-color: #f1f1f1; /* Set the color of the scrollbar track */
+                    }
+                  </style>
+                  <div class="col-md-8">
+                    <!-- Embed your video here, for example: -->
+                    <iframe width="100%" height="310" src="./assets/video/LCIS DEMO VIDEO - Made with Clipchamp.mp4" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="image-list">
+                      <div class="mb-3 pe-3 active">
+                        <a href="./assets/img/lcis/login.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/login.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Login</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc1.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc1.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Dashboard - Count & Calendar</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc2.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc2.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Dashboard - Graphs</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc3.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc3.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Table</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc4.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc4.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Form & Modal</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc6.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc6.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Leaflet Map and Attachment</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc7.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc7.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Computation & Algorithm</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc8.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc8.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Generating Documents</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc9.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc9.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Users / Employees</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/lcis/lc10.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/lcis/lc10.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Generating and Scanning of QR Code</h3>
+                        </a>
+                      </div>
+                      <!-- Scrollable Images -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="service" style="margin-bottom: 0">
+              <h3 class="h3 service title">Comprehensive System Features and Functions</h3>
+
+              <ul class="service-list">
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Secure Login and Registration</h3>
+                      <p class="timeline-text">User authentication through email and password for enhanced security.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Interactive Dashboard</h3>
+                      <p class="timeline-text">In-depth analytics, statistics, charts, full calendar integration, and map visualization.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Advanced Table Features</h3>
+                      <p class="timeline-text">Dynamic table with filtering, searching, and export capabilities for efficient data management.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Trapping Implementation</h3>
+                      <p class="timeline-text">Implementation of trapping mechanisms to capture specific data points.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Geotagging and Geolocation</h3>
+                      <p class="timeline-text">Integration of Leaflet for precise geotagging and geolocation functionalities.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Attachment, Email, and QR Code Support</h3>
+                      <p class="timeline-text">Seamless support for document attachments, email communication, and QR code integration.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Algorithm and Computation</h3>
+                      <p class="timeline-text">Implementation of advanced algorithms and computation processes for data analysis.</p>
+                    </li>
+                  </ol>
+                </li>
+
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Automated Document Generation</h3>
+                      <p class="timeline-text">Streamlined creation of various documents tailored to specific locational clearance requirements.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">User Management System</h3>
+                      <p class="timeline-text">Comprehensive user management functionalities for effective administration and access control.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Real-time Collaboration</h3>
+                      <p class="timeline-text">Facilitates seamless collaboration among stakeholders with real-time document sharing and updates.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">GIS Integration</h3>
+                      <p class="timeline-text">Integration of Geographic Information System (GIS) for spatial data analysis and mapping.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Comprehensive Audit Trail</h3>
+                      <p class="timeline-text">Detailed audit trail functionality to track and monitor changes made within the system.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Mobile Accessibility</h3>
+                      <p class="timeline-text">Responsive design for mobile accessibility, allowing users to manage locational data on the go.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Data Export and Reporting</h3>
+                      <p class="timeline-text">Effortless export of data and generation of comprehensive reports for analysis and decision-making.</p>
+                    </li>
+                  </ol>
+                </li>
+              </ul>
+              <div class="row w-100">
+                <div class="d-center">
+                  <img src="./assets/icons/html.svg" alt="HTML Icon" />
+                  <img src="./assets/icons/bootstrap.svg" alt="Bootstrap Icon" />
+                  <img src="./assets/icons/js.svg" alt="JS Icon" />
+                  <img src="./assets/icons/php.svg" alt="PHP Icon" />
+                  <img src="./assets/icons/phpmyadmin.svg" alt="PHPMyAdmin Icon" />
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="regutrike-content" class="content-container">
+            <section class="about-text">
+              <p>
+                Regutrike, a pioneering solution in tricycle franchise management, is my personal Internship to employment project dedicated to optimizing the registration and record-keeping processes. Through the strategic integration of
+                cutting-edge automation, Regutrike aims to elevate the efficiency of record creation, monitoring, and retrieval, ensuring swift and precise outcomes.
+              </p>
+
+              <p>Regutrike facilitated my journey to becoming a programmer/web developer.</p>
+            </section>
+            <section class="projects mb-3">
+              <div class="px-3">
+                <div class="row">
+                  <div class="col-md-8">
+                    <!-- Embed your video here, for example: -->
+                    <video width="100%" height="310" controls>
+                      <source src="./assets/video/REGUTRIKE DEMO VIDEO - Made with Clipchamp.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="image-list">
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg1.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg1.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Landing Page</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg2.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg2.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Authentication</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg3.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg3.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Dashboard</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg4.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg4.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Table</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg5.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg5.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Form & Modal</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg6.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg6.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Inspection Checklist</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg7.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg7.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">Generating Documents</h3>
+                        </a>
+                      </div>
+                      <div class="mb-3 pe-3">
+                        <a href="./assets/img/regutrike/rg8.png" target="_blank">
+                          <figure class="project-img mb-1">
+                            <div class="project-item-icon-box">
+                              <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                            <img src="./assets/img/regutrike/rg8.png" alt="finance" loading="lazy" />
+                          </figure>
+                          <h3 class="project-title text-center">User Management</h3>
+                        </a>
+                      </div>
+                      <!-- Scrollable Images -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="service" style="margin-bottom: 0">
+              <h3 class="h3 service title">Comprehensive System Features and Functions</h3>
+
+              <ul class="service-list">
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Landing Page</h3>
+                      <p class="timeline-text">Provides an engaging landing page to provide users with a welcoming and informative entry point to the system.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Secure Login and Registration</h3>
+                      <p class="timeline-text">User authentication through email verification for enhanced security.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Interactive Dashboard</h3>
+                      <p class="timeline-text">In-depth analytics, statistics, charts, and recent table.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Advanced Table Features</h3>
+                      <p class="timeline-text">Dynamic table with filtering, searching, and export capabilities for efficient data management.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Trapping Implementation</h3>
+                      <p class="timeline-text">Implementation of trapping mechanisms to capture specific data points.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Attachment, Email, and QR Code Support</h3>
+                      <p class="timeline-text">Seamless support for document attachments, email communication, and QR code integration.</p>
+                    </li>
+                  </ol>
+                </li>
+
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Automated Document Generation</h3>
+                      <p class="timeline-text">Streamlined creation of various documents tailored to specific Tricycle Drivers Permit.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">User Management System</h3>
+                      <p class="timeline-text">Comprehensive user management functionalities for effective administration and access control.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Real-time Collaboration</h3>
+                      <p class="timeline-text">Facilitates seamless collaboration among stakeholders with real-time document sharing and updates.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Comprehensive Audit Trail</h3>
+                      <p class="timeline-text">Detailed audit trail functionality to track and monitor changes made within the system.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Mobile Accessibility</h3>
+                      <p class="timeline-text">Responsive design for mobile accessibility, allowing users to manage locational data on the go.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Data Export and Reporting</h3>
+                      <p class="timeline-text">Effortless export of data and generation of comprehensive reports for analysis and decision-making.</p>
+                    </li>
+                  </ol>
+                </li>
+              </ul>
+              >
+              <div class="row w-100">
+                <div class="d-center">
+                  <img src="./assets/icons/html.svg" alt="HTML Icon" />
+                  <img src="./assets/icons/bootstrap.svg" alt="Bootstrap Icon" />
+                  <img src="./assets/icons/js.svg" alt="JS Icon" />
+                  <img src="./assets/icons/php.svg" alt="PHP Icon" />
+                  <img src="./assets/icons/phpmyadmin.svg" alt="PHPMyAdmin Icon" />
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="bms-content" class="content-container">
+            <section class="about-text">
+              <p>
+                Introducing my college project, the Barangay Management System, crafted with VB.NET and SQLite. This system serves as a game-changer for barangays, streamlining the recording and management of individual information and population
+                censuses. Its user-friendly design simplifies document requests, offering residents a hassle-free experience.
+              </p>
+
+              <p>
+                This project is not just a coding endeavor; it's the starting point of my coding journey. It's a reflection of my commitment and the beginning of my exploration into crafting solutions. Despite not being implemented, it remains a
+                special project for me, symbolizing the dedication and learning that went into its creation.
+
+                <a href="./assets/docs/OOPROGLAB-SYSTEM.docx"> <span class="text-purple"> You can view my project documentation here! </span></a>
+              </p>
+            </section>
+            <section class="projects">
+              <ul class="project-list">
+                <li>
+                  <a href="./assets/img/bms/bm1.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm1.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Authentication</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm6.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm6.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Generating Document</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm7.jpg" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm7.jpg" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Generating Report</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm2.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm2.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Filtering</h3>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="./assets/img/bms/bm3.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm3.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Organization</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm5.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm5.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Form</h3>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="service" style="margin-bottom: 0">
+              <h3 class="h3 service title">System Features and Functions</h3>
+
+              <ul class="service-list">
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Secure Login and Registration</h3>
+                      <p class="timeline-text">User authentication through username and password for enhanced security.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Modifiable Organization</h3>
+                      <p class="timeline-text">Ability to create, edit, and delete organization information.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Table and Report Features</h3>
+                      <p class="timeline-text">Table with filtering, searching, and export capabilities for efficient data management.</p>
+                    </li>
+                  </ol>
+                </li>
+
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Automated Document Generation</h3>
+                      <p class="timeline-text">Streamlined creation of various documents tailored to Barangay Documenents.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">User Management System</h3>
+                      <p class="timeline-text">Comprehensive user management functionalities for effective administration and access control.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Data Export and Reporting</h3>
+                      <p class="timeline-text">Effortless export of data and generation of comprehensive reports for analysis and decision-making.</p>
+                    </li>
+                  </ol>
+                </li>
+              </ul>
+              <div class="row w-100">
+                <div class="d-center">
+                  <img src="./assets/icons/vbnet.svg" alt="VB.net Icon" width="48" height="48" style="margin-right: 0.75rem" />
+                  <img src="./assets/icons/sqlite.svg" alt="SQLite Icon" width="48" height="48" />
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="gbdagm-content" class="content-container">
+            <section class="about-text">
+              <p>
+                Great Budget Drugstore and General Merchandise A Pharmacy E-Commerce Application. Combining with admin and mobile, The app enhances convenience for transactions by optimizing operations, simplifying registrations, and centralizing
+                records within a unified interface.
+              </p>
+
+              <p>
+                <a href="./assets/docs/THESIS_MANUAL.pdf"> <span class="text-purple"> You can view my thesis manual here! </span></a>
+              </p>
+            </section>
+            <section class="projects" style="display: none">
+              <ul class="project-list">
+                <li>
+                  <a href="./assets/img/bms/bm1.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm1.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Authentication</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm6.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm6.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Generating Documents and Reports</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm2.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm2.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Dashboard</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm3.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm3.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Organization</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm4.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm4.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Table</h3>
+                  </a>
+                </li>
+                <li>
+                  <a href="./assets/img/bms/bm5.png" target="_blank">
+                    <figure class="project-img">
+                      <div class="project-item-icon-box">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </div>
+                      <img src="./assets/img/bms/bm5.png" alt="finance" loading="lazy" />
+                    </figure>
+                    <h3 class="project-title text-center">Form</h3>
+                  </a>
+                </li>
+              </ul>
+            </section>
+            <section class="service" style="margin-bottom: 0">
+              <!-- <h3 class="h3 service title">System Features and Functions</h3> -->
+
+              <ul class="service-list" style="display: none">
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Secure Login and Registration</h3>
+                      <p class="timeline-text">User authentication through username and password for enhanced security.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Modifiable Organization</h3>
+                      <p class="timeline-text">Ability to create, edit, and delete organization information.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Table and Report Features</h3>
+                      <p class="timeline-text">Table with filtering, searching, and export capabilities for efficient data management.</p>
+                    </li>
+                  </ol>
+                </li>
+
+                <li class="service-item">
+                  <ol class="timeline-list ms-3">
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Automated Document Generation</h3>
+                      <p class="timeline-text">Streamlined creation of various documents tailored to Barangay Documenents.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">User Management System</h3>
+                      <p class="timeline-text">Comprehensive user management functionalities for effective administration and access control.</p>
+                    </li>
+                    <li class="timeline-item">
+                      <h3 class="h3 timeline-item-title">Data Export and Reporting</h3>
+                      <p class="timeline-text">Effortless export of data and generation of comprehensive reports for analysis and decision-making.</p>
+                    </li>
+                  </ol>
+                </li>
+              </ul>
+              <div class="row w-100">
+                <div class="d-center">
+                  <img src="./assets/icons/laravel.svg" alt="Laravel Icon" width="48" height="48" />
+                  <img src="./assets/icons/blade.svg" alt="Blade Icon" width="48" height="48" />
+                  <img src="./assets/icons/flutter.svg" alt="Flutter Icon" width="48" height="48" />
+                  <img src="./assets/icons/phpmyadmin.svg" alt="PHPMyAdmin Icon" width="48" height="48" />
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <section class="projects">
+            <ul class="filter-list" style="display: none">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Web design</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Applications</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Web development</button>
+              </li>
+            </ul>
+
+            <div class="filter-select-box" style="display: none">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>Select category</div>
+
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web design</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Applications</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web development</button>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <article class="article blog" data-page="awards">
+          <header>
+            <h2 class="h2 article-title">Awards & <br />Certificates</h2>
+          </header>
+
+          <section class="blog-posts">
+            <ul class="blog-posts-list">
+              <li class="blog-post-item">
+                <a href="./assets/img/CUMLAUDE.jpg" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img src="./assets/img/CUMLAUDE.jpg" alt="Design conferences in 2022" loading="lazy" />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Received</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2023-08-29">August 29, 2023</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Cum Laude</h3>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="./assets/img/BESTINTHESIS.jpg" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img src="./assets/img/BESTINTHESIS.jpg" alt="Design digest #80" loading="lazy" />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Received</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2023-08-29">August 29, 2023</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Best in Thesis</h3>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="#">
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Received</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2023-08-29">August 29, 2023</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Best in App Development</h3>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="#">
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Received</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2023-08-29">August 29, 2023</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Best in OJT</h3>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="./assets/img/backend-101.png" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img src="./assets/img/backend-101.png" alt="Design digest #79" loading="lazy" />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Received</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2023-01-06">January 6, 2023</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Back-end Web Development 101</h3>
+                  </div>
+                </a>
+              </li>
+              <li class="blog-post-item">
+                <a href="./assets/img/cloud-computing.png" target="_blank">
+                  <figure class="blog-banner-box">
+                    <img src="./assets/img/cloud-computing.png" alt="The forgotten art of spacing" loading="lazy" />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Received</p>
+
+                      <span class="dot"></span>
+
+                      <time datetime="2022-06-11">June 11, 2022</time>
+                    </div>
+
+                    <h3 class="h3 blog-item-title">Cloud Computing and Introduction to Azure</h3>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+        <article class="article contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4855.2859557822!2d121.01679060767592!3d14.309745311827914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d6597b37a899%3A0x7106f0924cfb122!2s129b%20Congressional%20Rd%2C%20General%20Mariano%20Alvarez%2C%20Cavite!5e0!3m2!1sen!2sph!4v1707233400545!5m2!1sen!2sph"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </figure>
+          </section>
+
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact Form</h3>
+
+            <form action="https://formkeep.com/f/617511062467" class="form" method="post" data-form>
+              <div class="input-wrapper">
+                <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input />
+                <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input />
+              </div>
+              <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
+        </article>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentHash = window.location.hash.substring(1); // Remove the '#' from currentHash
+        const navLinks = document.querySelectorAll(".navbar-link");
+        const contentSections = document.querySelectorAll(".article");
+        if (currentHash) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("data-nav-link") == currentHash) {
+              link.classList.add("active");
+            }
+          });
+          contentSections.forEach((section) => {
+            section.classList.remove("active");
+            if (section.getAttribute("data-page") == currentHash) {
+              section.classList.add("active");
+            }
+          });
+        } else {
+          const aboutElement = document.querySelector('[data-nav-link="about"]');
+          if (aboutElement) {
+            aboutElement.classList.add("active");
+            console.log(aboutElement);
+          }
+          const aboutElement2 = document.querySelector('[data-page="about"]');
+          if (aboutElement2) {
+            aboutElement2.classList.add("active");
+          }
+        }
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            const newHash = link.getAttribute("data-nav-link");
+            history.pushState({}, "", `#${newHash}`);
+            navLinks.forEach((navLink) => navLink.classList.remove("active"));
+            link.classList.add("active");
+            contentSections.forEach((section) => section.classList.remove("active"));
+            document.querySelector(`.article[data-page="${newHash}"]`).classList.add("active");
+          });
+        });
+      });
+    </script>
+
+    <script>
+      // JavaScript to handle click events and show/hide content containers
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarLinks = document.querySelectorAll(".proj-navbar-link");
+        const contentContainers = document.querySelectorAll(".content-container");
+
+        navbarLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            const target = this.getAttribute("data-target");
+
+            // Remove 'active' class from all links
+            navbarLinks.forEach((navLink) => {
+              navLink.classList.remove("active");
+            });
+
+            // Add 'active' class to the clicked link
+            this.classList.add("active");
+
+            // Hide all content containers
+            contentContainers.forEach((container) => {
+              container.classList.remove("active");
+            });
+
+            // Show the content container corresponding to the clicked link
+            document.getElementById(target + "-content").classList.add("active");
+          });
+        });
+      });
+    </script>
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>
